@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Cam</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+<div class="navbar"></div>
+<div class="grid">
+	<div class="title">
+		<div class="dropdown">
+  <button class="dropbtn">Window size</button>
+	  <div id="myDropdown" class="dropdown-content">
+	    <button id="w360">360</button>
+	  	 <button id="w480">480</button>
+	    <button id="w720">720</button>
+	    <button id="w1080">1080</button>
+		<button id="fullscreen">fullscreen</button>
+  </div>
+</div>
+	</div>
+	<div class="header">
+		<button id="snap" class="dropbtn" >Snap Photo</button>
+	</div>
+
+
+	<div class="sidebar">
+		<a id="download" download="photo.png">
+		<button id="download_btn" class="dropbtn" >Download</button>
+		</a>
+	</div>
+	<div class="footer">
+		<div id="delayslider">
+			
+		
+		<div >Задержка <span id="delay"> 0</span> сек</div>
+		<input type="range" class='slider' id="timer" value="0" min="0" max="10">
+		</div>
+	</div>
+</div>
+
+<div id="mediablock">
+<video id='video'>Разрешите</video>
+<canvas id="myCanvas" width="640" height="480"></canvas>
+</div>
+
+
+<div class="info">
+	Внимание! Кнопки window size отвечают только за размер окна. <br>
+	<span>
+		Видео по автоматически идет в FullHD (или
+		 ниже, если камера не поддерживает FullHD)
+	</span>
+</div>
+
+
+ 
+
+<script src="script.js">
+
+
+
+
+</script>
+</body>
+</html>
