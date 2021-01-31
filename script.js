@@ -8,7 +8,7 @@ let downloadButton = document.getElementById("downloadButton");
 let recording_div = document.getElementById('recording_div')
 
 
-let video_resolution={ width: 1920, height: 1080 }
+let video_resolution={ width: 1280, height: 720 }
 let constraints = { audio: false, video: video_resolution};
 function start_preview(){
     recording_div.style.display=('none')
@@ -217,11 +217,11 @@ document.addEventListener('click', function(){
     return new Promise(resolve => preview.onplaying = resolve);
   }).then(() => startRecording(preview.captureStream()))
   .then (recordedChunks => {
-    let recordedBlob = new Blob(recordedChunks, { type: "video/webm" });
+    let recordedBlob = new Blob(recordedChunks, { type: "video/mp4" });
     console.log(recordedBlob)
     recording.src = URL.createObjectURL(recordedBlob);
     downloadButton.href = recording.src;
-    downloadButton.download = "RecordedVideo.webm";
+    downloadButton.download = "RecordedVideo.mp4";
     
     
   })
