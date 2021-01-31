@@ -10,22 +10,20 @@ background: radial-gradient(circle, rgba(174,216,238,0.15577889447236182) 33%, r
 
 
 video{
-	height: 360px;
+	height: calc(100vh * 0.5);
 }
+
 
 
 canvas{
 	display: none;
-	height: 360px;
-}
-
-#download_btn{
-	display: none;
+	height: calc(100vh * 0.5)
 }
 
 
 
-button{
+
+.dropbtn{
 	width: 150px;
   color: black;
   padding: 12px 20px;
@@ -46,29 +44,39 @@ button{
 
 
 
-.title {
-	grid-area: title;
+.winsize {
+	grid-area: winsize;
 }
-.header {
-	grid-area: header;
+.snapphoto {
+	grid-area: snapphoto;
 }
-.sidebar {
-	grid-area: sidebar;
-}
-
-.footer {
-	grid-area: footer;
-
+.download_snap {
+	grid-area: download_snap;
 }
 
+.delay_slider {
+	grid-area: delay_slider;
 
+}
 
-	.grid{
+.Record_stop{
+	grid-area: Record_stop;
+}
+
+.Record_start{
+	grid-area: Record_start;
+}
+
+.Start_previev_btn{
+	grid-area: Start_previev_btn;
+}
+
+.grid{
 	display: grid;
-	grid-template-columns: 1fr 150px 150px 150px 1fr 180px 1fr;
+	grid-template-columns: 1fr 140px 140px 140px 140px 1fr 140px  1fr 140px;
 	grid-template-rows: 50px ;
 	grid-template-areas: 
-	". title header sidebar  . footer ."
+	"Start_previev_btn winsize snapphoto download_snap delay_slider  . Record_start   . Record_stop"
 
 
 
@@ -90,7 +98,7 @@ button{
 }
 
 /* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:enabled:hover, .dropbtn:enabled:focus {
   background-color: #2980B9;
 }
 
@@ -153,8 +161,13 @@ canvas{
 	padding: 0;
 }
 
-
-.info{
+#recording_div{
 	text-align: center;
-	font-style: italic;
+}
+
+#recording_div a{
+	text-align: center;
+		display: block;
+	margin: 0 auto;
+
 }
