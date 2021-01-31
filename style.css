@@ -10,15 +10,21 @@ background: radial-gradient(circle, rgba(174,216,238,0.15577889447236182) 33%, r
 
 
 video{
-	height: calc(100vh * 0.5);
+	width:   calc(100vw * 0.8);
+	display: block;
+	margin: 0 auto;
+	padding: 0;
 }
 
 
 
 canvas{
 	display: none;
-	height: calc(100vh * 0.5)
+	width:   calc(100vw * 0.8);
+	margin: 0 auto;
+	padding: 0;
 }
+
 
 
 
@@ -36,7 +42,7 @@ canvas{
   overflow: hidden;
   background-color: #3498DB;
   
-  height: 50px;
+  height: 200px;
   width: 100%;
   position: absolute;
   z-index: -1000;
@@ -73,15 +79,88 @@ canvas{
 
 .grid{
 	display: grid;
-	grid-template-columns: 1fr 140px 140px 140px 140px 1fr 140px  1fr 140px;
-	grid-template-rows: 50px ;
+	grid-template-columns:  150px 150px 150px 150px;
+	grid-template-rows: 50px 50px 50px 50px;
 	grid-template-areas: 
-	"Start_previev_btn winsize snapphoto download_snap delay_slider  . Record_start   . Record_stop"
+	" Start_previev_btn . 	winsize  				."
+	" Record_start  	. 	Record_stop 			. "
+	' download_snap 	. 	snapphoto  .	'
+	' delay_slider  . .  .'
+	
 
 
 
 	;
 	}
+
+@media screen and (min-width: 768px){
+	.grid{
+	display: grid;
+	grid-template-columns: 1fr 140px 140px 140px 140px 1fr;
+	grid-template-rows: 50px 50px;
+	grid-template-areas: 
+	". Start_previev_btn   winsize      snapphoto  download_snap ." 
+	".  delay_slider  .   Record_start    Record_stop ."
+
+	;
+	}
+
+.navbar {
+  overflow: hidden;
+  background-color: #3498DB;
+  
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  z-index: -1000;
+}
+
+video{
+	width:   calc(100vw * 0.7);
+}
+
+canvas{
+	display: none;
+	width:   calc(100vw * 0.7);
+}
+
+
+}
+
+
+@media screen and (min-width: 1000px){
+	.grid{
+	display: grid;
+	grid-template-columns: 1fr 150px 150px 150px 150px 150px 150px 150px 1fr;
+	grid-template-rows: 50px ;
+	grid-template-areas: 
+	". Start_previev_btn winsize snapphoto download_snap delay_slider  Record_start    Record_stop ."
+
+	;
+	}
+
+.navbar {
+  overflow: hidden;
+  background-color: #3498DB;
+  
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  z-index: -1000;
+}
+
+video{
+	width:   calc(100vw * 0.5);
+}
+
+canvas{
+	display: none;
+	width:   calc(100vw * 0.5);
+}
+
+
+}
+
 
 
 
@@ -150,16 +229,7 @@ padding: 10px;
 
 
 
-video{
-	display: block;
-	margin: 0 auto;
-	padding: 0;
-}
 
-canvas{
-	margin: 0 auto;
-	padding: 0;
-}
 
 #recording_div{
 	text-align: center;
